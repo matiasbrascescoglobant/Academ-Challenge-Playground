@@ -61,12 +61,12 @@ public with sharing class ValidationCNPJClass {
         return Pattern.matches('^(\\d{2}\\.\\d{3}\\.\\d{3}/\\d{4}\\-\\d{2})?$', CNPJ);
     }
 
-    public static boolean existCNPJ(String CNPJ, List<Account> accountList) {   
+    public static boolean existCNPJ(Account acc, List<Account> accountList) {   
         
-        if(CNPJ == null) return false;
+        if(acc.CNPJ__c == null) return false;
         
         for(Account a : accountList) {
-            if(a.CNPJ__c != null && a.CNPJ__c.equals(CNPJ)) {
+            if(a.CNPJ__c != null && acc.Id != a.Id && a.CNPJ__c.equals(acc.CNPJ__c)) {
                 return true;
             }
         }
