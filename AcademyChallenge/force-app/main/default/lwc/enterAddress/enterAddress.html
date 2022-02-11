@@ -16,7 +16,7 @@
                         type="radio"
                         onchange={handleChange}></lightning-radio-group>
         <lightning-input type="Counter" name="cep" onblur={handleCepBlur} 
-                            placeholder="insert cep" label="Enter a cep" max-length="9">
+                            placeholder="insert cep" label="Enter a cep" max-length="8">
         </lightning-input>
         <template if:true={error}>
             <c-error-panel errors={error}></c-error-panel>

@@ -1,11 +1,11 @@
 <template>
-    <div class="slds-var-m-vertical_small">
+      <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
         <template if:true={errorMessages.length}>
             <template for:each={errorMessages} for:item="message">
-                <p class="slds-text-body_regular" key={message}>
+                <h2 class="slds-text-body_regular" key={message}>
                     {message}
-                </p>
+                </h2>
             </template>
         </template>
-    </div>
+      </div>
 </template>
